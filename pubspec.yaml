@@ -3,9 +3,9 @@ description: "A utility class to construct and safely build URLs in a chainable 
 version: 1.0.0
 homepage:
 publish_to: 'https://pub.dev'
-homepage: https://github.com/yourusername/my_package
-repository: https://github.com/yourusername/my_package
-issue_tracker: https://github.com/yourusername/my_package/issues
+homepage: https://github.com/anugrahkora/url_builder
+repository: https://github.com/anugrahkora/url_builder
+issue_tracker: https://github.com/anugrahkora/url_builder/issues
 
 example: example/url_builder_example.dart
 environment:
