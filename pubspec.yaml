@@ -1,4 +1,4 @@
-name: url_builder
+name: url_builder_enhanced
 description: "A utility class to construct and safely build URLs in a chainable way."
 version: 1.0.0
 publish_to: 'https://pub.dev'
