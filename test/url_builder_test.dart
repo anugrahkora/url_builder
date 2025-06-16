@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:url_builder_enhanced/url_builder.dart';
+import 'package:url_builder_enhanced/url_builder_enhanced.dart';
 
 void main() {
   group('UrlBuilder', () {

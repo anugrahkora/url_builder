@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:url_builder_enhanced/url_builder.dart';
+import 'package:url_builder_enhanced/url_builder_enhanced.dart';
 
 void main() {
   final url = UrlBuilder('https://api.example.com')
