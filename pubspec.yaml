@@ -1,6 +1,6 @@
 name: url_builder_enhanced
 description: "A utility class to construct and safely build URLs in a chainable way."
-version: 1.0.0
+version: 1.0.1
 repository: https://github.com/anugrahkora/url_builder
 issue_tracker: https://github.com/anugrahkora/url_builder/issues
 license: MIT
