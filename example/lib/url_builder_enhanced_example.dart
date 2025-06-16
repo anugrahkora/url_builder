@@ -11,7 +11,7 @@ void main() {
       .build();
 
   if (kDebugMode) {
-  debugPrint(url);
-}
+    debugPrint(url);
+  }
   // Output: https://api.example.com/users/123?active=true&sort=name#profile
 }

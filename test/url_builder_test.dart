@@ -9,9 +9,7 @@ void main() {
     });
 
     test('adds a single path segment', () {
-      final url = UrlBuilder('https://example.com')
-          .addPath('users')
-          .build();
+      final url = UrlBuilder('https://example.com').addPath('users').build();
       expect(url, equals('https://example.com/users'));
     });
 
@@ -32,16 +30,14 @@ void main() {
     });
 
     test('ignores null parameter values', () {
-      final url = UrlBuilder('https://example.com')
-          .addParameter('sort', null)
-          .build();
+      final url =
+          UrlBuilder('https://example.com').addParameter('sort', null).build();
       expect(url, equals('https://example.com'));
     });
 
     test('adds URL fragment', () {
-      final url = UrlBuilder('https://example.com')
-          .addFragment('section1')
-          .build();
+      final url =
+          UrlBuilder('https://example.com').addFragment('section1').build();
       expect(url, equals('https://example.com#section1'));
     });
 
@@ -60,8 +56,10 @@ void main() {
           .addParameter('name', 'John Doe & Co.')
           .addFragment('tab 1')
           .build();
-      expect(url, equals(
-          'https://example.com/category%2520%2526%2520deals?name=John+Doe+%26+Co.#tab%201'));
+      expect(
+          url,
+          equals(
+              'https://example.com/category%2520%2526%2520deals?name=John+Doe+%26+Co.#tab%201'));
     });
 
     test('throws assertion error for empty base URL', () {
@@ -79,10 +77,8 @@ void main() {
     });
 
     test('Throw assertion for empty fragment', () {
-
-      expect(()=>UrlBuilder('https://example.com')
-          .addFragment('')
-          .build(),  throwsA(isA<AssertionError>()));
+      expect(() => UrlBuilder('https://example.com').addFragment('').build(),
+          throwsA(isA<AssertionError>()));
     });
   });
 }

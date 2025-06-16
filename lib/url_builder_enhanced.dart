@@ -1,5 +1,5 @@
 /// A utility class to construct and safely build URLs in a chainable way.
-/// 
+///
 /// Supports dynamic path segments, query parameters, and URL fragments.
 class UrlBuilder {
   /// The base [Uri] parsed from the provided URL string.
@@ -15,16 +15,16 @@ class UrlBuilder {
   String? _fragment;
 
   /// Creates a new [UrlBuilder] with the given [baseUrl].
-  /// 
+  ///
   /// Throws an assertion error if [baseUrl] is empty.
   UrlBuilder(String baseUrl)
       : assert(baseUrl.isNotEmpty, 'Base URL cannot be empty'),
         _uri = Uri.parse(baseUrl);
 
   /// Appends a single path segment to the URL.
-  /// 
+  ///
   /// The [path] is encoded using [Uri.encodeComponent]. Null values are not allowed.
-  /// 
+  ///
   /// Returns the current instance for chaining.
   UrlBuilder addPath(dynamic path) {
     assert(path != null, 'Path cannot be null');
@@ -33,13 +33,12 @@ class UrlBuilder {
   }
 
   /// Adds a query parameter to the URL.
-  /// 
+  ///
   /// The [param] name must not be empty. If [value] is null, nothing is added.
   /// Returns the current instance for chaining.
-  UrlBuilder addParameter(String param, dynamic value,{String? defaultValue}) {
-    
+  UrlBuilder addParameter(String param, dynamic value, {String? defaultValue}) {
     assert(param.isNotEmpty, 'Parameter name cannot be empty');
-    final resolvedValue=value?? defaultValue;
+    final resolvedValue = value ?? defaultValue;
     if (resolvedValue != null) {
       _params[param] = resolvedValue.toString();
     }
@@ -47,7 +46,7 @@ class UrlBuilder {
   }
 
   /// Appends a URL fragment (e.g., `#section1`) to the URL.
-  /// 
+  ///
   /// If [fragment] is null or empty, it is ignored.
   /// Returns the current instance for chaining.
   UrlBuilder addFragment(dynamic fragment) {
