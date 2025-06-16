@@ -1,39 +1,62 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+A lightweight, chainable utility for building and manipulating URLs in Dart or Flutter projects.
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Construct clean, dynamic URLs with path segments, query parameters, and fragments—all in a fluent API.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+✅ Type-safe and null-aware
+✅ Chainable method calls
+✅ Automatically encodes components
+✅ Fragment support (`#section`)
+✅ Easy to test and integrate
+
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add the dependency in your `pubspec.yaml`:
+```yaml
+dependencies:
+  url_builder: ^1.0.0
+```  
+Then run
+```
+flutter pub get  
+```
+
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+```
+import 'package:url_builder/url_builder.dart';
 
-```dart
-const like = 'sample';
+void main() {
+  final url = UrlBuilder('https://api.example.com')
+      .addPath('users')
+      .addPath(123)
+      .addParameter('active', true)
+      .addParameter('sort', 'name')
+      .addFragment('profile')
+      .build();
+
+  print(url);
+  // Output: https://api.example.com/users/123?active=true&sort=name#profile
+}
 ```
 
-## Additional information
+## Constructor 
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```
+UrlBuilder(String baseUrl)
+```
+
+## Methods
+
+| Method                | Description                                      |
+| --------------------- | ------------------------------------------------ |
+| `.addPath(dynamic)`   | Adds a URL-encoded path segment.                 |
+| `.addParameter(k, v)` | Adds a query parameter if the value is not null. |
+| `.addFragment(frag)`  | Adds a URL fragment (after `#`).                 |
+| `.build()`            | Returns the final URL string.                    |
+
+
+
