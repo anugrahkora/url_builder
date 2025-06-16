@@ -1,15 +1,16 @@
 name: url_builder
 description: "A utility class to construct and safely build URLs in a chainable way."
 version: 1.0.0
-homepage:
 publish_to: 'https://pub.dev'
 repository: https://github.com/anugrahkora/url_builder
 issue_tracker: https://github.com/anugrahkora/url_builder/issues
+license: MIT
 
 example: example/url_builder_example.dart
 environment:
-  sdk: ^3.8.1
-  flutter: ">=1.17.0"
+  flutter: ">=3.0.0"
+  sdk: "^3.5.0"
+
 
 dependencies:
   flutter:
@@ -18,7 +19,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
 
 flutter:
 
